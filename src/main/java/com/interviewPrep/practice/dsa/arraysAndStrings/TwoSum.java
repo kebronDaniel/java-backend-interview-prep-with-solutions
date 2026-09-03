@@ -10,6 +10,7 @@ public class TwoSum {
 
         for (int i = 0; i < input.length; i++) {
             int need = target - input[i];
+            // like looking for the second pair in the map and if non register yourself there and move on.
             if (seen.containsKey(need)){
                 return new int[]{seen.get(need), i};
             }

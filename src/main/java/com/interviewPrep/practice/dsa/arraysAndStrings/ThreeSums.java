@@ -22,16 +22,20 @@ public class ThreeSums {
                 if (sum == 0){
                     result.add((List.of(input[i], input[left], input[right])));
                     while (left < right && input[left] == input[left+1]){
+                        // escape repeated number, this is possible b/ce the array is sorted.
                         left++;
                     }
                     while (right > left && input[right] == input[right - 1]){
+                        // escape repeated number
                         right--;
                     }
                     left++;
                     right--;
                 } else if (sum < 0) {
+                    // since its a sorted array if the sum is greater, then it means add (move the left side)
                     left++;
                 } else {
+                    // same for the right side, if its greater then move right or decrease to get close to 0.
                     right--;
                 }
             }
