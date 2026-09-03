@@ -14,13 +14,8 @@ public class PracticeApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PracticeApplication.class, args);
 
-		MergeIntervals mergeIntervals = new MergeIntervals();
-		var result = mergeIntervals.merge(new int[][]{
-				{8,9},{2,6},{1,10},{4,5}
-		});
-		for (int[] value:result){
-			System.out.println(Arrays.toString(value));
-		}
+		LongestSubString longestSubString = new LongestSubString();
+		System.out.println(longestSubString.getMaxNonRepeatingLength("abba"));
 	}
 
 }
