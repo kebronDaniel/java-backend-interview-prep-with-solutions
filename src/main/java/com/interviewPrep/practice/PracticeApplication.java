@@ -14,8 +14,8 @@ public class PracticeApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PracticeApplication.class, args);
 
-		LongestSubString longestSubString = new LongestSubString();
-		System.out.println(longestSubString.getMaxNonRepeatingLength("abba"));
+		ValidAnagrams validAnagrams = new ValidAnagrams();
+		System.out.println(validAnagrams.isValidAnagram("cat","tar"));
 	}
 
 }
