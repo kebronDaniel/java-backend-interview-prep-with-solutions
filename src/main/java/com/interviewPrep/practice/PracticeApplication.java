@@ -14,8 +14,8 @@ public class PracticeApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PracticeApplication.class, args);
 
-		ValidAnagrams validAnagrams = new ValidAnagrams();
-		System.out.println(validAnagrams.isValidAnagram("cat","tar"));
+		FirstNonRepeatingCharacter nonRepeatingCharacter = new FirstNonRepeatingCharacter();
+		System.out.println(nonRepeatingCharacter.getIndexOfFirstNonRepeatingChar("loveleetcode"));
 	}
 
 }
