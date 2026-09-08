@@ -30,6 +30,7 @@ public class PracticeApplication {
 		linkedList.addLast(node5);
 
 		System.out.println(linkedList.detectCycle());
+		System.out.println(linkedList.findMiddleNode().getValue());
 	}
 
 }
