@@ -45,4 +45,18 @@ public class BasicLinkedList {
         }
         head = previous;
     }
+
+    public boolean detectCycle(){
+        ListNode slow = head;
+        ListNode fast = head;
+
+        // this guarantees if the one just before the last is not null.
+        // and its ok if the last one is null.
+        while (fast != null && fast.getNext() != null){
+            slow = slow.getNext();
+            fast = fast.getNext().getNext();
+            if (slow==fast) return true;
+        }
+        return false;
+    }
 }

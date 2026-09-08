@@ -16,14 +16,20 @@ public class PracticeApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PracticeApplication.class, args);
 
+		ListNode node1 = new ListNode(1);
+		ListNode node2 = new ListNode(2);
+		ListNode node3 = new ListNode(3);
+		ListNode node4 = new ListNode(4);
+		ListNode node5 = new ListNode(5);
+
 		BasicLinkedList linkedList = new BasicLinkedList();
-		linkedList.addLast(new ListNode(1));
-		linkedList.addLast(new ListNode(2));
-		linkedList.addLast(new ListNode(3));
-		linkedList.addLast(new ListNode(4));
-		linkedList.printList();
-		linkedList.reverse();
-		linkedList.printList();
+		linkedList.addLast(node1);
+		linkedList.addLast(node2);
+		linkedList.addLast(node3);
+		linkedList.addLast(node4);
+		linkedList.addLast(node5);
+
+		System.out.println(linkedList.detectCycle());
 	}
 
 }
