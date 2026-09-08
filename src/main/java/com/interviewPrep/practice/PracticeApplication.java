@@ -4,6 +4,7 @@ import com.interviewPrep.practice.coreJava.equalsHashcode.User;
 import com.interviewPrep.practice.dsa.arraysAndStrings.*;
 import com.interviewPrep.practice.dsa.linkedLists.BasicLinkedList;
 import com.interviewPrep.practice.dsa.linkedLists.ListNode;
+import com.interviewPrep.practice.dsa.linkedLists.MergeSortedLinkedLists;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -22,15 +23,12 @@ public class PracticeApplication {
 		ListNode node4 = new ListNode(4);
 		ListNode node5 = new ListNode(5);
 
-		BasicLinkedList linkedList = new BasicLinkedList();
-		linkedList.addLast(node1);
-		linkedList.addLast(node2);
-		linkedList.addLast(node3);
-		linkedList.addLast(node4);
-		linkedList.addLast(node5);
+		node1.setNext(node3);
+		node3.setNext(node5);
+		node2.setNext(node4);
 
-		System.out.println(linkedList.detectCycle());
-		System.out.println(linkedList.findMiddleNode().getValue());
+		MergeSortedLinkedLists mergeSortedLinkedLists = new MergeSortedLinkedLists();
+		var result = mergeSortedLinkedLists.merge(node1,node2);
 	}
 
 }
