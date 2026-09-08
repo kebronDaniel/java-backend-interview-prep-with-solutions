@@ -22,6 +22,8 @@ public class PracticeApplication {
 		linkedList.addLast(new ListNode(3));
 		linkedList.addLast(new ListNode(4));
 		linkedList.printList();
+		linkedList.reverse();
+		linkedList.printList();
 	}
 
 }

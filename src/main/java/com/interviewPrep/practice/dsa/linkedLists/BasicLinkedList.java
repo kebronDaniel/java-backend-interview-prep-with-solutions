@@ -27,4 +27,22 @@ public class BasicLinkedList {
         }
         System.out.println("null");
     }
+
+    public void reverse(){
+        ListNode previous = null;
+        ListNode current = head;
+
+        while (current != null){
+            // save the original next node so that it would be used to point the next one to continue.
+            // because during the process you change pointers so you need to know which one comes next.
+            ListNode next = current.getNext();
+            // here reversing happens or you change the pointer to point from the next to the previous.
+            current.setNext(previous);
+
+            // to continue the process the previous and current move one step forward.
+            previous = current;
+            current = next;
+        }
+        head = previous;
+    }
 }
