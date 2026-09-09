@@ -61,6 +61,7 @@ public class BasicLinkedList {
     }
 
     public ListNode findMiddleNode(){
+        // go until fast reaches final and slow is the mid point
         if (head == null) return null;
         ListNode slow = head;
         ListNode fast = head;

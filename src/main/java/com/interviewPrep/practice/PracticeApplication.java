@@ -2,9 +2,7 @@ package com.interviewPrep.practice;
 
 import com.interviewPrep.practice.coreJava.equalsHashcode.User;
 import com.interviewPrep.practice.dsa.arraysAndStrings.*;
-import com.interviewPrep.practice.dsa.linkedLists.BasicLinkedList;
-import com.interviewPrep.practice.dsa.linkedLists.ListNode;
-import com.interviewPrep.practice.dsa.linkedLists.MergeSortedLinkedLists;
+import com.interviewPrep.practice.dsa.linkedLists.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -23,12 +21,14 @@ public class PracticeApplication {
 		ListNode node4 = new ListNode(4);
 		ListNode node5 = new ListNode(5);
 
-		node1.setNext(node3);
-		node3.setNext(node5);
-		node2.setNext(node4);
+		node1.setNext(node2);
+		node2.setNext(node3);
+		node3.setNext(node4);
+		node4.setNext(node5);
+		node5.setNext(node3);
 
-		MergeSortedLinkedLists mergeSortedLinkedLists = new MergeSortedLinkedLists();
-		var result = mergeSortedLinkedLists.merge(node1,node2);
+		DetectAndRemoveCycle removeCycle = new DetectAndRemoveCycle();
+		removeCycle.removeCycle(node1);
 	}
 
 }
