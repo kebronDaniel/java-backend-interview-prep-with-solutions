@@ -19,6 +19,7 @@ public class ValidParenthesis {
                 openingParenthesisStack.push(input.charAt(i));
             } else {
                 if (openingParenthesisStack.isEmpty()) return false;
+                // check if the current closing pairs with the previous opening (which is the one on top of the stack)
                 if (parenthesisMatch.get((char)openingParenthesisStack.peek()) == input.charAt(i)) openingParenthesisStack.pop();
                 else return false;
             }
