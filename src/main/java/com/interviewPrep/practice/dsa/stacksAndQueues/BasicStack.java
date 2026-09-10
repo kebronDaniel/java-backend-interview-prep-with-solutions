@@ -23,12 +23,12 @@ public class BasicStack {
     }
 
     public int peek(){
-        if (size == 0) throw new IllegalStateException("Can't pop from an empty stack");
+        if (size == 0) throw new IllegalStateException("Can't peek from an empty stack");
         return stack.getValue();
     }
 
     public boolean isEmpty(){
-        return size != 0 ? false : true;
+        return size == 0;
     }
 
     public void showStack(){
