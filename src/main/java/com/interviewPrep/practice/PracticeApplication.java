@@ -16,12 +16,8 @@ public class PracticeApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PracticeApplication.class, args);
 
-		QueueUsingStack queue = new QueueUsingStack();
-		queue.offer(1);
-		queue.offer(2);
-		queue.offer(3);
-		System.out.println(queue.peek());
-		System.out.println(queue.poll());
+		NextGreaterElement nextGreaterElement = new NextGreaterElement();
+		nextGreaterElement.findNextGreaterElement(new int[]{2,1,2,4,3});
 	}
 
 }
