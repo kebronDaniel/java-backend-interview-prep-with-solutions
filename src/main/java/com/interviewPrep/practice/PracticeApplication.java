@@ -16,8 +16,8 @@ public class PracticeApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PracticeApplication.class, args);
 
-		NextGreaterElement nextGreaterElement = new NextGreaterElement();
-		nextGreaterElement.findNextGreaterElement(new int[]{2,1,2,4,3});
+		ReversePolishNotation polishNotation = new ReversePolishNotation();
+		polishNotation.calculate(new String[]{"2", "1", "+", "3", "*"});
 	}
 
 }
