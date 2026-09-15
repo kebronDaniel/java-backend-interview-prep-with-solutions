@@ -5,6 +5,7 @@ import com.interviewPrep.practice.dsa.arraysAndStrings.*;
 import com.interviewPrep.practice.dsa.linkedLists.*;
 import com.interviewPrep.practice.dsa.stacksAndQueues.*;
 import com.interviewPrep.practice.dsa.treesAndGraphs.InorderTraversal;
+import com.interviewPrep.practice.dsa.treesAndGraphs.LevelOrderTraversal;
 import com.interviewPrep.practice.dsa.treesAndGraphs.TreeNode;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -30,8 +31,8 @@ public class PracticeApplication {
 		treeNode2.setLeftNode(treeNode4);
 		treeNode2.setRightNode(treeNode5);
 
-		InorderTraversal inorderTraversal = new InorderTraversal();
-		inorderTraversal.getNodesInorder(rootNode);
+		LevelOrderTraversal levelOrderTraversal = new LevelOrderTraversal();
+		levelOrderTraversal.getLevelOrder(rootNode);
 	}
 
 }
