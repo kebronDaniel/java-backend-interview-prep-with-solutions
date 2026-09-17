@@ -5,7 +5,7 @@ public class ValidateBinaryTree {
     public boolean validate(TreeNode root) {
         // remember the stack is a stack of the left visited nodes
         // and the way you move is left....when there is right node continue moving left .....
-        // its like the spdf ordering.
+        // it's like the spdf ordering.
         // Inorder traversal visits left, node, then right.
         // The stack remembers nodes to return to after exploring their left subtree.
         // Each popped value must be greater than the previously visited value.
