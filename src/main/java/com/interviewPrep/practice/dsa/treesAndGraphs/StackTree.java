@@ -22,6 +22,10 @@ public class StackTree {
         return stackTreeNode.pop();
     }
 
+    public TreeNode peek(){
+        if (isEmpty()) throw new IllegalStateException("Can't pop an empty stack");
+        return stackTreeNode.peek();
+    }
 
 
     public boolean isEmpty(){

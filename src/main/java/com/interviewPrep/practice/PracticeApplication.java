@@ -17,21 +17,23 @@ public class PracticeApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PracticeApplication.class, args);
 
-		TreeNode rootNode = new TreeNode(8);
-		TreeNode treeNode4 = new TreeNode(4);
-		TreeNode treeNode5 = new TreeNode(5);
+		TreeNode rootNode = new TreeNode(10);
 		TreeNode treeNode6 = new TreeNode(6);
-		TreeNode treeNode7 = new TreeNode(7);
+		TreeNode treeNode4 = new TreeNode(4);
 		TreeNode treeNode8 = new TreeNode(8);
+		TreeNode treeNode15 = new TreeNode(15);
+		TreeNode treeNode12 = new TreeNode(12);
+		TreeNode treeNode17 = new TreeNode(17);
 
-		rootNode.setLeftNode(treeNode4);
-		rootNode.setRightNode(treeNode5);
-		treeNode4.setLeftNode(treeNode6);
-		treeNode4.setRightNode(treeNode7);
-		treeNode6.setLeftNode(treeNode8);
+		rootNode.setLeftNode(treeNode6);
+		rootNode.setRightNode(treeNode15);
+		treeNode6.setLeftNode(treeNode4);
+		treeNode6.setRightNode(treeNode8);
+		treeNode15.setLeftNode(treeNode12);
+		treeNode15.setRightNode(treeNode17);
 
-		BalancedTreeChecker checker = new BalancedTreeChecker();
-		System.out.println(checker.check(rootNode));
+		LeastCommonAncestorForBst commonAncestor = new LeastCommonAncestorForBst();
+		System.out.println(commonAncestor.findLeastCommonAncestor(12,17,rootNode));
 
 	}
 
