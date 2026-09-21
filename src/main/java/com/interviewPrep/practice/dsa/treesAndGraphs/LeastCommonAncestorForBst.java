@@ -2,7 +2,6 @@ package com.interviewPrep.practice.dsa.treesAndGraphs;
 
 public class LeastCommonAncestorForBst {
 
-
     public int findLeastCommonAncestor(int p, int q, TreeNode root){
         var current = root;
         while (current != null ){

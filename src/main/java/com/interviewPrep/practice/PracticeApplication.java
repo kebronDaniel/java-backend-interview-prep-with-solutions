@@ -32,8 +32,9 @@ public class PracticeApplication {
 		treeNode15.setLeftNode(treeNode12);
 		treeNode15.setRightNode(treeNode17);
 
-		LeastCommonAncestorForBst commonAncestor = new LeastCommonAncestorForBst();
-		System.out.println(commonAncestor.findLeastCommonAncestor(12,17,rootNode));
+		DiameterOfBinaryTree diameter = new DiameterOfBinaryTree();
+		diameter.getEdges(rootNode);
+		diameter.getNodes(rootNode);
 
 	}
 
