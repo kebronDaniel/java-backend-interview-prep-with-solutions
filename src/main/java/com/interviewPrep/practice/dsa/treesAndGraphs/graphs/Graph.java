@@ -1,4 +1,4 @@
-package com.interviewPrep.practice.dsa.treesAndGraphs;
+package com.interviewPrep.practice.dsa.treesAndGraphs.graphs;
 
 import java.util.*;
 
