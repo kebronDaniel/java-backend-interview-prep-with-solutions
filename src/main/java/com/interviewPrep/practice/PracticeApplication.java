@@ -11,13 +11,16 @@ public class PracticeApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PracticeApplication.class, args);
 
-
-		MatrixGraph matrixGraph = new MatrixGraph(2,2);
-		matrixGraph.assignNode(0,0,0);
-		matrixGraph.assignNode(0,1,1);
-		matrixGraph.assignNode(1,0,0);
-		matrixGraph.assignNode(1,1,1);
-		System.out.println(matrixGraph);
+		Graph graph = new Graph();
+		graph.addNode("A");
+		graph.addNode("B");
+		graph.addNode("C");
+		graph.addNode("D");
+		graph.addEdge("A","B");
+		graph.addEdge("B","C");
+		graph.addEdge("C","D");
+		graph.addEdge("D","B");
+		System.out.println(graph.detectCycleForDirectedGraph());
 	}
 
 }

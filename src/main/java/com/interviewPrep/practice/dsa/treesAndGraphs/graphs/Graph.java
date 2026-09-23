@@ -51,4 +51,39 @@ public class Graph {
         }
         return false;
     }
+
+    public boolean detectCycleForDirectedGraph(){
+
+        Map<String, Integer> states = new HashMap<>();
+        for (String element: adjacencyList.keySet()){
+            // you skip because once you open a node you would see it and all its neighbors and go through all the paths
+            // thus you not only know the path from which you started but also the path of unvisited nodes as well.
+            // so there is no need to visit them again.
+            // this also helps detect unrelated or separated graphs.(you finish one path and go to the next starting from another node.)
+            if (states.getOrDefault(element,0) == 2) continue;
+            var result = detectCycle(element,states);
+            if (result) return true;
+        }
+        return false;
+    }
+
+    // the whole idea is that what happens if I follow the path, would I return to the same node that I am visiting
+    // or any node that I have started visiting.
+    // thus if there is a cycle then you would try to visit the same node which you have visited.
+    private boolean detectCycle(String current,Map<String, Integer> states){
+        states.put(current,1);
+        // get its neighbors
+        var neighbors = getNeighbours(current);
+        for (String neighbor: neighbors){
+            if (states.getOrDefault(neighbor,0) == 1) return true;
+            else if (states.getOrDefault(neighbor,0) == 2) {
+                continue;
+            }
+            // the recursion is like saying if this node is not visit it take me to all unvisited nodes from this on.
+            // if the path would eventually get back here it means there is a cycle.
+            if (detectCycle(neighbor,states)) return true;
+        }
+        states.put(current,2);
+        return false;
+    }
 }
