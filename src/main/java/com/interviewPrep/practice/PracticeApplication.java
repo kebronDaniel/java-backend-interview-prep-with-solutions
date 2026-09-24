@@ -16,11 +16,10 @@ public class PracticeApplication {
 		graph.addNode("B");
 		graph.addNode("C");
 		graph.addNode("D");
-		graph.addEdge("A","B");
+		graph.addEdge("A","C");
 		graph.addEdge("B","C");
 		graph.addEdge("C","D");
-		graph.addEdge("D","B");
-		System.out.println(graph.detectCycleForDirectedGraph());
+		var result = graph.getTopologicalOrder();
 	}
 
 }

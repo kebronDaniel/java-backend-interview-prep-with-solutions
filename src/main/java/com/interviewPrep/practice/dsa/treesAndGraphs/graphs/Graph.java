@@ -86,4 +86,42 @@ public class Graph {
         states.put(current,2);
         return false;
     }
+
+    public List<String> getTopologicalOrder(){
+
+        // get the degree or the number of connection a node has been pointed to and save that to a queue.
+        Map<String, Integer> nodeDegree = new HashMap<>();
+        for (String node: adjacencyList.keySet()){
+            nodeDegree.put(node,nodeDegree.getOrDefault(node,0));
+            // get the next node that this points to add degree for that.
+            var neighbors = getNeighbours(node);
+            for (String neighbor: neighbors){
+                var neighborDegree = nodeDegree.getOrDefault(neighbor,0);
+                neighborDegree++;
+                nodeDegree.put(neighbor, neighborDegree);
+            }
+        }
+
+        ArrayDeque<String> queue = new ArrayDeque<>();
+        // loop for the nodeDegree to add
+        for (String x: nodeDegree.keySet()){
+            if (nodeDegree.get(x) == 0) queue.add(x);
+        }
+
+        List<String> result = new ArrayList<>();
+        while (!queue.isEmpty()){
+            // dequeue and add to the result
+            var popped = queue.pop();
+            result.add(popped);
+            // decrease the degree of the neighbor
+            for (String neighbor: getNeighbours(popped)){
+                var newDegree = nodeDegree.get(neighbor);
+                newDegree--;
+                nodeDegree.put(neighbor,newDegree);
+                if (newDegree == 0) queue.add(neighbor);
+            }
+        }
+        if (result.size() != nodeDegree.size()) throw new IllegalStateException("There is a cycle");
+        return result;
+    }
 }
